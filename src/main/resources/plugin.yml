@@ -1,0 +1,4 @@
+name: BackupServer
+version: @version@
+main: com.kwvanderlinde.mc.backupserver.Plugin
+api-version: 1.16
