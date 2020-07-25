@@ -1,0 +1,14 @@
+# TODO Another take on the back up idea is to have some client connect to the minecraft server via the plugin. This would then be like a regular file download over HTTP or some other protocol.
+
+basename-template: 'BackupServer - ${datetime}'
+http-server-host: 'localhost'
+http-server-port: 0
+pipe-size: 16384
+
+# TODO Allow specifying the backup format: tar.gz, zip, etc.
+exclude:
+  # Uses Java NIO globbing. For technical details: https://docs.oracle.com/javase/8/docs/api/java/nio/file/FileSystem.html#getPathMatcher-java.lang.String-
+  # DEFICIENCY: Directory names will not include trailing slashes, so don't match on those.
+  - '{logs,cache}'
+  - 'plugins/dynmap'
+  - 'plugins/BackupServer/backups'
